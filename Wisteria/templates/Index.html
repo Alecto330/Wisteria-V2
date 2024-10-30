@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerte di Lavoro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    <!-- Bootstrap per gli elementi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  <!-- Font-Awesome per le icone (senz doverle scaricare) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> <!-- Per importare il font Poppins -->
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style_nav.css">
+</head>
+
+
+<body>
+
+    <section>   <!--############################ BARRA DI NAVIGAZIONE ####################################-->
+
+        <nav class="navbar custom-navbar justify-content-between fixed-top">
+
+            <div class="hamburger" id="hamburger">
+                &#9776; <!-- This is the hamburger icon -->
+            </div>
+
+            <nav class="menu" id="menu">
+                <ul>
+                    <a href="Index.html?c=1"><button class="InvisibleButton"><li>Home</li></button></a>  <!--   RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE -->
+                    <a href="Index.html?c=2"><button class="InvisibleButton"><li>About</li></button></a>  <!--   RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE -->
+                    <a href="Index.html?c=2"><button class="InvisibleButton"><li>Services</li></button></a>  <!--   RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE -->
+                    <a href="Index.html?c=2"><button class="InvisibleButton"><li>Contact</li></button></a>  <!--   RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE -->
+                </ul>
+            </nav>
+
+            <a href="Index.html?c=1">
+                <button class="InvisibleButton"> <!--   RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE -->
+                    <img src="../Assets/WISTERIA.png" alt="Logo Wisteria" style="height: 6.5vh" class="logo">
+                </button>
+            </a>
+
+            <a class="btn btn-outline-secondary" href="Index.html?c=2">
+                <button class="InvisibleButton">Accedi</button>  <!--   RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE / RENDI INVISIBILE IL BOTTONE -->
+            </a>
+
+        </nav>
+        </section>
+    </section>  <!--######################## FINE BARRA DI NAVIGAZIONE #####################################-->
+
+    <div id="myElement">    <!--################################ CARICA PAGINA #####################################-->
+        <iframe id="iframeContent" class="scroll-wrapper" src="home.html"></iframe> <!-- Iframe iniziale -->
+    </div>  <!--################################ FINE CARICA PAGINA #####################################-->
+
+
+    <script> // ######################### SWITCH CHE IMPLEMENTA LE VARIE PAGINE ###########################
+         
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+
+        function loadContent() {
+            const c = getQueryParameter('c');
+            const iframe = document.getElementById('iframeContent');
+            
+            switch (c) {
+                case '1':
+                    iframe.src = 'home.html';
+                    break;
+                case '2':
+                    iframe.src = 'login.html';
+                    
+                    break;
+                case '3':
+                    iframe.src = 'offerta.html';
+                    break;
+                default:
+                    iframe.src = 'home.html'; // Carica una pagina di default se non ci sono parametri
+                    break;
+            }
+        }
+
+        loadContent();  // Carica il contenuto inizialmente
+
+        history.replaceState(null, '', 'Index.html?c=1');
+
+        window.addEventListener('popstate', loadContent);  // Aggiungi un listener per il cambiamento di stato dell'URL
+
+    </script> <!-- ######################### FINE SWITCH CHE IMPLEMENTA LE VARIE PAGINE ###########################-->
+    
+
+    <script> // ########################## FUNZIONI IN JAVASCRIPT ######################################
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            document.body.style.userSelect = 'auto';
+        });
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show'); // Toggle the 'show' class
+        });
+    </script> <!-- ########################## FINE FUNZIONI IN JAVASCRIPT ###############################-->
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
