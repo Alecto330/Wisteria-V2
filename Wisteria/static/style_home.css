@@ -4,8 +4,12 @@
     border-color:#8228ffa5;
 }
 .btn-primary:hover
+<<<<<<< Updated upstream
 {
     color:#fff;
+=======
+{color:#fff;
+>>>>>>> Stashed changes
     background-color:#8228ffa5;
     border-color:#8228ffa5
 }
@@ -28,6 +32,11 @@
 }
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
+<<<<<<< Updated upstream
 .show>.btn-primary.dropdown-toggle:focus{
     box-shadow:0 0 0 .2rem #720effa5
+=======
+.show>.btn-primary.dropdown-toggle:focus
+{box-shadow:0 0 0 .2rem #720effa5
+>>>>>>> Stashed changes
 }

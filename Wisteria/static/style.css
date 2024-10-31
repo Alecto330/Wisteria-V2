@@ -222,6 +222,10 @@ input[type="search"] {
 }
  
 .menu {
+<<<<<<< Updated upstream
+=======
+    display: none; /* Initially hidden */
+>>>>>>> Stashed changes
     background-color: #686868;
     color: white;
     position: absolute;
