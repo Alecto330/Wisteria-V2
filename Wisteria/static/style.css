@@ -28,7 +28,7 @@ body {
     margin: 0;
 }
 .container {
-    margin-top: 15vw;
+    margin-top: 5vh;
     max-width: 90%;
     padding: 0 1vw;
 }
@@ -204,5 +204,62 @@ input[type="search"] {
 }
 
 
+/*####################################   PARAGRAFO INTRODUZIONE */
+@font-face {
+    font-family: "HelveticaWorld-Regular";
+    src: url("fonts/HelveticaWorld-Regular.ttf");
+}
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff; }
+    50% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff; }
+    100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff; }
+}
+.introduction-title{
+    font-family: 'HelveticaWorld-Regular', sans-serif;
+    font-weight: bolder;
+    font-size: 45px;
+    text-align: left;
+    margin-top: 8vh;
+    margin-left: 12vh;
+    color: rgb(123, 31, 255);
+    text-shadow: 0 0 8px rgba(123, 31, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(0, 0, 0, 0.4);
+    animation: glowing infinite;
+}
+
+.introduction{
+    font-size: 18px;
+    text-align: left;
+    margin-top: 4vh;
+    margin-left: 12vh;
+    margin-right: 1000px;
+}
 
 
+
+.navbar-brand{
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente il contenuto */
+    align-items: center; /* Centra verticalmente il contenuto */
+    width: auto; /* Rimuovi il 100% per evitare che prenda tutto lo spazio */
+    position: absolute;
+    z-index: 9999;
+}
+.logo-container{
+    height: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-img{
+    height: 25vh;
+    width: auto;
+    margin: 0; /* Elimina margini extra */
+    padding: 0;
+}
+.navbar-items{
+    margin-left: auto;
+    margin-right: 18px;
+}
