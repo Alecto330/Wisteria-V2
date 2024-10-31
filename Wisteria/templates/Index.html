@@ -24,13 +24,28 @@
 
             <nav class="menu" id="menu">
                 <ul>
-                    <a href="Index.html?c=1"><li>Home</li></a>  
-                    <a href="Index.html?c=2"><li>About</li></a>  
-                    <a href="Index.html?c=2"><li>Services</li></a> 
-                    <a href="Index.html?c=2"><li>Contact</li></a> 
+                    <li><a href="Index.html?c=1">Home</a></li>
+                    <li><a href="Index.html?c=2">About</a></li>
+                    <li><a href="Index.html?c=2">Services</a></li>
+                    <li><a href="Index.html?c=2">Contact</a></li>
                 </ul>
             </nav>
-
+            <script>
+                const hamburger = document.getElementById("hamburger");
+                const menu = document.getElementById("menu");
+            
+                hamburger.addEventListener("click", () => {
+                    if (menu.classList.contains("slide-in")) {
+                        // Se il menu è aperto, aggiunge la classe per lo slide-out
+                        menu.classList.remove("slide-in");
+                        menu.classList.add("slide-out");
+                    } else {
+                        // Se il menu è chiuso, lo apre
+                        menu.classList.remove("slide-out");
+                        menu.classList.add("slide-in");
+                    }
+                });
+            </script>
             <a href="Index.html?c=1">
                     <div class="logo-container">
                         <img src="../Assets/WISTERIA - NO SFONDO.png" alt="Logo Wisteria" class="logo-img">
@@ -38,16 +53,16 @@
                 
             </a>
 
-            <a class="btn btn-outline-secondary" href="Index.html?c=2">
-                <button class="InvisibleButton">Accedi</button>
+            <a class="btn btn-primary" href="Index.html?c=2">
+                Accedi
             </a>
 
         </nav>
         </section>
     </section>  <!--######################## FINE BARRA DI NAVIGAZIONE #####################################-->
 
-    <div id="myElement">    <!--################################ CARICA PAGINA #####################################-->
-        <iframe id="iframeContent" class="scroll-wrapper" src="home.html"></iframe> <!-- Iframe iniziale -->
+    <div id="myElement" class="scroll-wrapper">    <!--################################ CARICA PAGINA #####################################-->
+        <iframe id="iframeContent" class="scroll-content" src="home.html"></iframe> <!-- Iframe iniziale -->
     </div>  <!--################################ FINE CARICA PAGINA #####################################-->
 
 
